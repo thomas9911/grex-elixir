@@ -7,7 +7,8 @@ defmodule Grex.MixProject do
       version: "0.1.0",
       elixir: "~> 1.14",
       start_permanent: Mix.env() == :prod,
-      deps: deps()
+      deps: deps(),
+      aliases: aliases()
     ]
   end
 
@@ -21,7 +22,13 @@ defmodule Grex.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      rustler: [version: "0.30"]
+      {:rustler, [version: "0.30"]}
+    ]
+  end
+
+  defp aliases do
+    [
+      format: ["format", "cmd --cd ./native/grex_native cargo fmt"]
     ]
   end
 end

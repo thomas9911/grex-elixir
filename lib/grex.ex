@@ -18,6 +18,6 @@ defmodule Grex do
   end
 
   def builder(list) when list != [] do
-    Grex.Native.new_builder(list)
+    Grex.Native.builder_new(list)
   end
 end
